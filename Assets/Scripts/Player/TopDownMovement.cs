@@ -8,12 +8,15 @@ public class TopDownMovement : MonoBehaviour
 {
     [Header("References")]
     public Animator animator;
-    Rigidbody2D body;
+    public Rigidbody2D body;
     public Transform mouseObj;
 
     [Header("Health")]
     public int health = 5;
     public int shield = 1;
+    public bool canTakeDamage;
+    public float healthTimer;
+    private float Htimer;
 
     [Header("Movement")]
     public float runSpeed = 20.0f;
@@ -69,6 +72,16 @@ public class TopDownMovement : MonoBehaviour
             else
             {
                 animator.SetBool("Moving", false);
+            }
+        }
+
+        if(canTakeDamage == false)
+        {
+            Htimer += Time.deltaTime;
+            if(Htimer > healthTimer)
+            {
+                Htimer = 0;
+                canTakeDamage = true;
             }
         }
     }
@@ -131,25 +144,29 @@ public class TopDownMovement : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if(shield > 0)
+        if (canTakeDamage)
         {
-            shield --;
-            Debug.Log("Shield Just Got Hit, Shield is now: " + shield);
-            if(shield <= 0)
+            if (shield > 0)
             {
-                Debug.Log("Players Shield Just Broke");
-                shield = 0;
+                shield--;
+                Debug.Log("Shield Just Got Hit, Shield is now: " + shield);
+                if (shield <= 0)
+                {
+                    Debug.Log("Players Shield Just Broke");
+                    shield = 0;
+                }
             }
-        }
-        else
-        {
-            health = health - amount;
-            Debug.Log("Player Just Got Hit, Health is now: " + health);
-            if(health <= 0)
+            else
             {
-                Debug.Log("The Player Just Died");
-                SceneManager.LoadScene(0);
+                health = health - amount;
+                Debug.Log("Player Just Got Hit, Health is now: " + health);
+                if (health <= 0)
+                {
+                    Debug.Log("The Player Just Died");
+                    SceneManager.LoadScene(0);
+                }
             }
+            canTakeDamage = false;
         }
     }
 

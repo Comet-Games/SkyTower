@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurnCannonsOff : MonoBehaviour
 {
     public BulletCannon[] cannons;
+    public bool switc;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,7 +13,7 @@ public class TurnCannonsOff : MonoBehaviour
         {
             foreach(BulletCannon b in cannons)
             {
-                b.fire = false;
+                b.fire = switc;
             }
         }
 

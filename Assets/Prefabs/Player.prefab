@@ -401,10 +401,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4561609238006034256}
   - component: {fileID: 4561609238006034258}
-  - component: {fileID: 4561609238006034263}
   - component: {fileID: 4561609238006034260}
   - component: {fileID: 4561609238006034261}
   - component: {fileID: 4561609238006034262}
+  - component: {fileID: 4561609238006034263}
+  - component: {fileID: 3346663106252345692}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -483,28 +484,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4561609238006034263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4561609238006034257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923d89b5a79fc984ab50234e21268f85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4561609237455103191}
-  mouseObj: {fileID: 4561609237780745528}
-  runSpeed: 10
-  mousePosition: {x: 0, y: 0}
-  mouseDistance: {x: 0, y: 0}
-  cam: {fileID: 4561609236822265038}
-  weaponObj: {fileID: 0}
-  AimSpeed: 100
-  audioSource: {fileID: 4561609238006034262}
-  dodgeSound: {fileID: 8300000, guid: d7f43db7f7b4a5844a8dca772651d86c, type: 3}
 --- !u!50 &4561609238006034260
 Rigidbody2D:
   serializedVersion: 4
@@ -648,3 +627,47 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4561609238006034263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561609238006034257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923d89b5a79fc984ab50234e21268f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 4561609237455103191}
+  mouseObj: {fileID: 4561609237780745528}
+  health: 5
+  shield: 1
+  runSpeed: 10
+  isDodging: 0
+  mousePosition: {x: 0, y: 0}
+  mouseDistance: {x: 0, y: 0}
+  cam: {fileID: 4561609236822265038}
+  weaponObj: {fileID: 0}
+  AimSpeed: 100
+  audioSource: {fileID: 4561609238006034262}
+  dodgeSound: {fileID: 8300000, guid: d7f43db7f7b4a5844a8dca772651d86c, type: 3}
+  heartHolder: {fileID: 0}
+  heartPrefab: {fileID: 0}
+--- !u!114 &3346663106252345692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4561609238006034257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f122142298bcc48b9d3ee186a6f458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  numOfHearts: 5
+  hearts: []
+  fullHeart: {fileID: 0}
+  emptyHeart: {fileID: 0}
