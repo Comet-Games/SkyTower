@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using Cursor = UnityEngine.Cursor;
 
 public class TopDownMovement : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class TopDownMovement : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        Cursor.visible = false;
     }
 
     void Update()
