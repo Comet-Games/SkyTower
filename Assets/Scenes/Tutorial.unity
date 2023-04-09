@@ -43383,7 +43383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunSpriteRenderer: {fileID: 457184093}
   playerTransform: {fileID: 1046739748}
-  gunRadius: 0.8
+  gunRadius: 0.9
   gunSpeed: 10
 --- !u!212 &457184093
 SpriteRenderer:
@@ -47113,7 +47113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 26}
+  m_AnchoredPosition: {x: 0, y: 26.000122}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1341337010
