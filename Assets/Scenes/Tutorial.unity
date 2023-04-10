@@ -43383,7 +43383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunSpriteRenderer: {fileID: 457184093}
   playerTransform: {fileID: 1046739748}
-  gunRadius: 0.9
+  gunRadius: 0.5
   gunSpeed: 10
 --- !u!212 &457184093
 SpriteRenderer:
