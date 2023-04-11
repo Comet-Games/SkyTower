@@ -5,7 +5,7 @@ public class SimpleBullet : MonoBehaviour
 {
     public float speed;
     public int damage;
-    public int timeTillDestruction;
+    public float timeTillDestruction;
     public bool isPlayers = false;
     public Rigidbody2D rb;
     private GameObject player;
