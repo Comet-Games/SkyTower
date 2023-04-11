@@ -6,6 +6,7 @@ public class SimpleBullet : MonoBehaviour
     public float speed;
     public int damage;
     public int timeTillDestruction;
+    public bool isPlayers = false;
     public Rigidbody2D rb;
     private GameObject player;
     private Collider2D coll;
@@ -29,11 +30,15 @@ public class SimpleBullet : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            if(other.gameObject.GetComponent<TopDownMovement>().isDodging == false)
+            if (!isPlayers)
             {
-                other.gameObject.GetComponent<TopDownMovement>().TakeDamage(damage);
-                Destroy(gameObject);
+                if(other.gameObject.GetComponent<TopDownMovement>().isDodging == false)
+                {
+                    other.gameObject.GetComponent<TopDownMovement>().TakeDamage(damage);
+                    Destroy(gameObject);
+                }
             }
+
             
         }
         if(other.gameObject.tag == "Wall")

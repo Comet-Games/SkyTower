@@ -9,8 +9,12 @@ public class OpenDoors : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        //Opens the door if the player walks on it
-        OpenTheDoors();
+        if(col.tag == "Player")
+        {
+            //Opens the door if the player walks on it
+            OpenTheDoors();
+        }
+
     }
 
     public void OpenTheDoors()
