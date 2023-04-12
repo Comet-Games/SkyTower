@@ -73,14 +73,34 @@ public class SimpleGunScript : MonoBehaviour
 
             bulletsInMagazine--;
 
-            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPos.position, bulletSpawnPos.rotation);
-            bullet.GetComponent<SimpleBullet>().isPlayers = true;
-            float bulletAngle = Random.Range(-bulletSpread, bulletSpread);
-            bullet.transform.Rotate(0f, 0f, bulletAngle);
-            bullet.GetComponent<SimpleBullet>().speed = bulletSpeed;
-            bullet.GetComponent<SimpleBullet>().timeTillDestruction = range;
-            bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
-            audioSource.PlayOneShot(shoot, 0.7F);
+            if(bulletsPerShot == 1)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPos.position, bulletSpawnPos.rotation);
+                bullet.GetComponent<SimpleBullet>().isPlayers = true;
+                float bulletAngle = Random.Range(-bulletSpread, bulletSpread);
+                bullet.transform.Rotate(0f, 0f, bulletAngle);
+                bullet.GetComponent<SimpleBullet>().speed = bulletSpeed;
+                bullet.GetComponent<SimpleBullet>().timeTillDestruction = range;
+                bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
+                audioSource.PlayOneShot(shoot, 0.7F);
+            }
+            else
+            {
+                for (int i = 0; i < bulletsPerShot; i++)
+                {
+                    GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPos.position, bulletSpawnPos.rotation);
+                    bullet.GetComponent<SimpleBullet>().isPlayers = true;
+                    float totalSpreadAngle = bulletSpread * (bulletsPerShot - 1);
+                    float bulletAngle = (-totalSpreadAngle / 2f) + (i * bulletSpread);
+                    bullet.transform.Rotate(0f, 0f, bulletAngle);
+                    bullet.GetComponent<SimpleBullet>().speed = bulletSpeed;
+                    bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
+                    audioSource.PlayOneShot(shoot, 0.7F);
+                }
+            }
+
+            
+
         }
     }
 
