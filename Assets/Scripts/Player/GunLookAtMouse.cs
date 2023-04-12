@@ -9,6 +9,11 @@ public class GunLookAtMouse : MonoBehaviour
     public float gunRadius = 1.0f;
     public float gunSpeed = 10.0f;
 
+    private void Awake()
+    {
+        playerTransform = GetComponentInParent<TopDownMovement>().transform;
+    }
+
     void Update()
     {
         Vector3 mousePosition = Input.mousePosition;

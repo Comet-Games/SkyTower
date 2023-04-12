@@ -37,6 +37,7 @@ public class TopDownMovement : MonoBehaviour
     public float AimSpeed;
 
     [Header("Audio Stuff")]
+    public bool holdingWeapon = false;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip dodgeSound;
 
@@ -53,6 +54,7 @@ public class TopDownMovement : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
+
         if (canMove)
         {
             if (horizontal != 0)
@@ -76,7 +78,7 @@ public class TopDownMovement : MonoBehaviour
                 animator.SetBool("Moving", false);
             }
         }
-
+        animator.SetBool("Weaponless", !holdingWeapon);
         if(canTakeDamage == false)
         {
             Htimer += Time.deltaTime;
@@ -146,8 +148,9 @@ public class TopDownMovement : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+
         if (canTakeDamage)
-        {
+        {        
             if (shield > 0)
             {
                 shield--;
