@@ -37,11 +37,17 @@ public class SimpleBullet : MonoBehaviour
                     other.gameObject.GetComponent<TopDownMovement>().TakeDamage(damage);
                     Destroy(gameObject);
                 }
-            }
-
-            
+            }       
         }
-        if(other.gameObject.tag == "Wall")
+        if (other.gameObject.tag == "Enemy")
+        {
+
+            other.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
+            Destroy(gameObject);
+
+        }
+
+        if (other.gameObject.tag == "Wall")
         {
             Destroy(gameObject);
         }   

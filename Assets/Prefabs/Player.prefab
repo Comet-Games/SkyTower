@@ -703,18 +703,8 @@ MonoBehaviour:
   numOfHearts: 5
   shieldAmount: 1
   numOfShields: 5
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  shields:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  hearts: []
+  shields: []
   fullHeart: {fileID: 458461043, guid: 0731bed276ab12c4184221d6bf3ca4a3, type: 3}
   emptyHeart: {fileID: -1458371495, guid: 0731bed276ab12c4184221d6bf3ca4a3, type: 3}
   shield: {fileID: 1832944505, guid: 0731bed276ab12c4184221d6bf3ca4a3, type: 3}
