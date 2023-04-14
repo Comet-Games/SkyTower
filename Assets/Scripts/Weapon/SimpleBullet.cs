@@ -41,9 +41,16 @@ public class SimpleBullet : MonoBehaviour
         }
         if (other.gameObject.tag == "Enemy")
         {
+            if(!isPlayers)
+            {
 
-            other.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
-            Destroy(gameObject);
+            }
+            else
+            {
+                other.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
+                Destroy(gameObject);
+            }
+
 
         }
 
