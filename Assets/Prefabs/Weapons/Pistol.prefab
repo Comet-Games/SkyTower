@@ -216,7 +216,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -316,6 +316,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   gunRadius: 0.5
   gunSpeed: 10
+  isPlayers: 0
 --- !u!114 &3001493907780021536
 MonoBehaviour:
   m_ObjectHideFlags: 0

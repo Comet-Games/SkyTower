@@ -54254,7 +54254,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &71285061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54318,11 +54318,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 71285066}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &71285065
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -54604,7 +54615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &89556617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54668,11 +54679,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 89556622}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &89556621
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -55824,7 +55846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &292673015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55888,11 +55910,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 292673020}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &292673019
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -56786,7 +56819,7 @@ NavMeshAgent:
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 4
+  m_StoppingDistance: 8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -56819,11 +56852,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 522419258}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 100
-  holdingWeapon: 1
-  bulletSpeed: 5
+  holdingWeapon: 0
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &522419258
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -58262,7 +58306,7 @@ NavMeshAgent:
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 4
+  m_StoppingDistance: 8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -58295,11 +58339,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 672388005}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 100
-  holdingWeapon: 1
-  bulletSpeed: 5
+  holdingWeapon: 0
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &672388005
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -59582,7 +59637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1000329823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59646,11 +59701,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 1000329828}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &1000329827
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -59881,7 +59947,7 @@ NavMeshAgent:
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 4
+  m_StoppingDistance: 8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -59914,11 +59980,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 1023976464}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 100
-  holdingWeapon: 1
-  bulletSpeed: 5
+  holdingWeapon: 0
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &1023976464
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -60267,7 +60344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1055729417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60331,11 +60408,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 1055729422}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &1055729421
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -60551,7 +60639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1089021648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60615,11 +60703,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 1089021653}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &1089021652
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -61174,7 +61273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1174957077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61238,11 +61337,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 1174957082}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &1174957081
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -61552,7 +61662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1207085058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61616,11 +61726,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 1207085063}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &1207085062
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -62280,7 +62401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1314487498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62344,11 +62465,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 1314487503}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &1314487502
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -64169,11 +64301,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 1491183651}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 100
-  holdingWeapon: 1
-  bulletSpeed: 5
+  holdingWeapon: 0
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &1491183651
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -64274,7 +64417,7 @@ NavMeshAgent:
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 4
+  m_StoppingDistance: 8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -64839,7 +64982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1646381309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64903,11 +65046,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 1646381314}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &1646381313
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -91722,7 +91876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1937775553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91786,11 +91940,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 1937775558}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &1937775557
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -91914,7 +92079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1939460858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91978,11 +92143,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 1939460863}
-  radius: 20
+  enemyHealth: {fileID: 0}
+  health: 5
+  shield: 0
+  healthTimer: 0.1
   weaponObj: {fileID: 0}
   AimSpeed: 0
   holdingWeapon: 0
-  bulletSpeed: 5
+  fireRate: 0.5
+  magazineSize: 50
+  reloadTime: 0.5
+  bulletSpeed: 3
+  bulletSpread: 15
+  bulletsPerShot: 10
+  maxMagazines: 5
+  infiniteMagazines: 1
+  radius: 20
 --- !u!58 &1939460862
 CircleCollider2D:
   m_ObjectHideFlags: 0

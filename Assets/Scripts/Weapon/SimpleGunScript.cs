@@ -50,6 +50,10 @@ public class SimpleGunScript : MonoBehaviour
         {
             GetComponentInParent<TopDownMovement>().holdingWeapon = true;
         }
+        if(GetComponentInParent<SimpleFollowEnemy>())
+        {
+            GetComponentInParent<SimpleFollowEnemy>().holdingWeapon = true;
+        }
 
     }
 

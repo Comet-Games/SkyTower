@@ -3,35 +3,42 @@ using UnityEngine.AI;
 
 public class SimpleFollowEnemy : MonoBehaviour
 {
+    [Header("References")]
     public CircleCollider2D radiusCol;
-    public float radius;
+    public EnemyHealth enemyHealth;
     private Transform target;
     NavMeshAgent agent;
+
+    [Header("Health")]
+    public int health = 5;
+    public int shield = 1;
+    public float healthTimer;
 
     [Header("Weapon Stuff")]
     public GameObject weaponObj;
     public float AimSpeed;
     public bool holdingWeapon;
     bool shooting = true;
-    public float bulletSpeed = 5;
+    public float fireRate = 0.5f; // Time between shots
+    public int magazineSize = 10; // Maximum number of bullets in a magazine
+    public float reloadTime = 2f; // Time it takes to reload
+    public float bulletSpeed = 5; // Speed of the bullet
+    public float bulletSpread = 0.1f; // Spread Of the bullet(s)
+    public int bulletsPerShot = 1; // Amount of bullets Per Shot
+    public int maxMagazines = 5; // Maximum number of magazines
+    public bool infiniteMagazines = false; // Whether the gun has an infinite number of magazines
 
+    public float radius;
     Animator animator;
     private void Start()
     {
+        GetReferences();
+        SetReferences();
         radiusCol.radius = radius;
 
-        agent = GetComponent<NavMeshAgent>();
         agent.updatePosition = true;
         agent.updateRotation = false;
-        animator = GetComponentInChildren<Animator>();
         animator.SetBool("Weaponless", !holdingWeapon);
-
-        if(GetComponentInChildren<SimpleGunScript>())
-        {
-            holdingWeapon = true;
-            weaponObj = GetComponentInChildren<SimpleGunScript>().gameObject;
-            weaponObj.GetComponent<SimpleGunScript>().bulletSpeed = bulletSpeed;
-        }
     }
     private void Update()
     {
@@ -61,6 +68,11 @@ public class SimpleFollowEnemy : MonoBehaviour
         if (agent.velocity.magnitude <= 1)
         {
             animator.SetBool("Moving", false);
+            shooting = true;
+        }
+        else
+        {
+            shooting = false;
         }
     }
 
@@ -69,6 +81,35 @@ public class SimpleFollowEnemy : MonoBehaviour
         agent.SetDestination(new Vector3(target.position.x, target.position.y, transform.position.z));
         animator.SetBool("Moving", true);
     }
+
+    void GetReferences()
+    {
+        enemyHealth = GetComponent<EnemyHealth>();
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
+        if (holdingWeapon == true)
+        {
+            holdingWeapon = true;
+            weaponObj = GetComponentInChildren<SimpleGunScript>().gameObject;
+            SimpleGunScript weaponScript = GetComponentInChildren<SimpleGunScript>();
+            weaponScript.fireRate = fireRate;
+            weaponScript.magazineSize = magazineSize;
+            weaponScript.reloadTime = reloadTime;
+            weaponScript.bulletSpeed = bulletSpeed;
+            weaponScript.bulletSpread = bulletSpread;
+            weaponScript.bulletsPerShot = bulletsPerShot;
+            weaponScript.maxMagazines = maxMagazines;
+            weaponScript.infiniteMagazines = infiniteMagazines;
+        }
+    }
+
+    void SetReferences()
+    {
+        enemyHealth.health = health;
+        enemyHealth.shield = shield;
+        enemyHealth.healthTimer = healthTimer;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {

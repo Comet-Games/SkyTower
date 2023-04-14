@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Health")]
-    public int health = 5;
-    public int shield = 1;
-    public bool canTakeDamage;
-    public float healthTimer;
+    [HideInInspector] public int health = 5;
+    [HideInInspector] public int shield = 1;
+    [HideInInspector] public bool canTakeDamage;
+    [HideInInspector] public float healthTimer;
     private float Htimer;
 
     // Start is called before the first frame update
