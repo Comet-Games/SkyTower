@@ -51,10 +51,11 @@ public class SimpleFollowEnemy : MonoBehaviour
             dir.Normalize();
 
             if(holdingWeapon)
-            {
+            {                    
+                weaponObj.GetComponent<GunLookAtMouse>().EnemyVersion(target.position);
                 if(shooting)
                 {
-                    weaponObj.GetComponent<GunLookAtMouse>().EnemyVersion(target.position);
+
                     weaponObj.GetComponent<SimpleGunScript>().Fire(false);
                 }
             }
