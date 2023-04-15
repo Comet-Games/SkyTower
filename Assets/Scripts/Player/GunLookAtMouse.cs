@@ -19,7 +19,15 @@ public class GunLookAtMouse : MonoBehaviour
         }
         else
         {
-            playerTransform = GetComponentInParent<SimpleFollowEnemy>().transform;
+            if(GetComponentInParent<SimpleFollowEnemy>())
+            {
+                playerTransform = GetComponentInParent<SimpleFollowEnemy>().transform;
+            }
+            else if(GetComponentInParent<BossStateController>())
+            {
+                playerTransform = GetComponentInParent<BossStateController>().transform;
+            }
+
         }
     }
 

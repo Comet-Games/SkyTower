@@ -102,7 +102,6 @@ public class SimpleGunScript : MonoBehaviour
                     bullet.GetComponent<SimpleBullet>().speed = bulletSpeed;
                     bullet.GetComponent<SimpleBullet>().timeTillDestruction = range;
                     bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
-                    audioSource.PlayOneShot(shoot, 0.7F);
                 }
                 else
                 {
@@ -115,9 +114,9 @@ public class SimpleGunScript : MonoBehaviour
                         bullet.transform.Rotate(0f, 0f, bulletAngle);
                         bullet.GetComponent<SimpleBullet>().speed = bulletSpeed;
                         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
-                        audioSource.PlayOneShot(shoot, 0.7F);
                     }
                 }
+                audioSource.PlayOneShot(shoot, 0.7F);
             }
         }
 
