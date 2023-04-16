@@ -27,7 +27,7 @@ public class OpenDoors : MonoBehaviour
     IEnumerator CloseAfterDelay()
     {
         canClose = false; // Set to false to prevent immediate closing
-        yield return new WaitForSeconds(0.5f); // Wait 
+        yield return new WaitForSeconds(0.3f); // Wait 
         canClose = true; // Set back to true so the door can be closed
     }
 

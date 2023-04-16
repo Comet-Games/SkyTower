@@ -26,6 +26,11 @@ public class EnemyRoom : MonoBehaviour
     public void OpenTheDoors()
     {
         foreach (OpenDoors door in doors)
+        {
+            door.CloseTheDoors();
+            door.LockDoors();
+        }
+        foreach (OpenDoors door in doors)
         {            
             door.UnlockDoors();
             door.OpenTheDoors();
