@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class EnemyRoom : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject EnemySpawner;
+    public OpenDoors[] doors;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if(other.gameObject.tag == "Player")
+        {
+            foreach(OpenDoors door in doors)
+            {
+                door.CloseTheDoors();
+                door.LockDoors();
+            }
+            EnemySpawner.SetActive(true);
+
+
+            GetComponent<Collider2D>().enabled = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenTheDoors()
     {
-        
+        foreach (OpenDoors door in doors)
+        {            
+            door.UnlockDoors();
+            door.OpenTheDoors();
+        }
+        EnemySpawner.SetActive(false);
     }
 }

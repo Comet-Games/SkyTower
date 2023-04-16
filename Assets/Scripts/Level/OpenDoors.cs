@@ -7,14 +7,28 @@ public class OpenDoors : MonoBehaviour
     public Animator[] animators;
     public GameObject doorCollider;
 
+    private bool isOpen = false;
+    private bool canClose = true;
+    private bool isLocked = false; // add a new variable to keep track if the doors are locked
+
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Player")
+        if (col.tag == "Player")
         {
-            //Opens the door if the player walks on it
-            OpenTheDoors();
+            //Opens the door if the player walks on it and the doors are not locked
+            if (!isOpen && !isLocked)
+            {
+                OpenTheDoors();
+                StartCoroutine(CloseAfterDelay());
+            }
         }
+    }
 
+    IEnumerator CloseAfterDelay()
+    {
+        canClose = false; // Set to false to prevent immediate closing
+        yield return new WaitForSeconds(0.5f); // Wait 
+        canClose = true; // Set back to true so the door can be closed
     }
 
     public void OpenTheDoors()
@@ -26,19 +40,33 @@ public class OpenDoors : MonoBehaviour
         }
 
         //de-activate this object
-        gameObject.SetActive(false);
+        isOpen = true;
         doorCollider.SetActive(false);
     }
+
     public void CloseTheDoors()
     {
-        //close the doors
-        foreach (Animator anim in animators)
+        if (canClose) // Check if door can be closed
         {
-            anim.Play("Base Layer.CloseDoor");
-        }
+            //close the doors
+            foreach (Animator anim in animators)
+            {
+                anim.Play("Base Layer.CloseDoor");
+            }
 
-        //re-activate this object
-        gameObject.SetActive(true);
-        doorCollider.SetActive(true);
+            //reactivate the object and the door collider
+            isOpen = false;
+            doorCollider.SetActive(true);
+        }
+    }
+
+    public void LockDoors()
+    {
+        isLocked = true; // set the doors to be locked
+    }
+
+    public void UnlockDoors()
+    {
+        isLocked = false; // set the doors to be unlocked
     }
 }
