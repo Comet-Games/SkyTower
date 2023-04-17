@@ -45,7 +45,6 @@ public class BossStateController : MonoBehaviour
     {
         maxHealth = health;
         agent = GetComponent<NavMeshAgent>();
-        agent.updatePosition = true;
         agent.updateRotation = false;
         currentState = BossState.Stage2;
         enemyHealth = GetComponent<EnemyHealth>();
@@ -84,6 +83,7 @@ public class BossStateController : MonoBehaviour
         switch (currentState)
         {
             case BossState.Stage1:
+                agent.updatePosition = true;
                 healthBar.SetColour(stage1Color);
                 gunObj.GetComponent<GunLookAtMouse>().EnemyVersion(target.position);
                 agent.SetDestination(new Vector3(target.position.x, target.position.y, transform.position.z));
@@ -92,6 +92,7 @@ public class BossStateController : MonoBehaviour
 
             case BossState.Stage2:
                 // Code for stage 2 state
+                agent.updatePosition = false;
                 healthBar.SetColour(stage2Color);
                 Vector3 rotationToAdd = new Vector3(0, 0, 0.5f);
                 gunObj.GetComponent<GunLookAtMouse>().EnemyVersion(target.position);
@@ -100,6 +101,7 @@ public class BossStateController : MonoBehaviour
                 break;
 
             case BossState.Stage3:
+                agent.updatePosition = true;
                 healthBar.SetColour(stage3Color);
                 gunObj.GetComponent<GunLookAtMouse>().EnemyVersion(target.position);
                 agent.SetDestination(new Vector3(target.position.x, target.position.y, transform.position.z));
