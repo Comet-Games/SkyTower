@@ -7,6 +7,8 @@ TagManager:
   - Hole
   - Wall
   - Enemy
+  - Bullet
+  - Blank
   layers:
   - Default
   - TransparentFX

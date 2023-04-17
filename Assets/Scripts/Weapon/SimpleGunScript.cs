@@ -14,6 +14,7 @@ public class SimpleGunScript : MonoBehaviour
     public float bulletSpread = 0.1f;
     public int bulletsPerShot = 1;
     public int maxMagazines = 5; // Maximum number of magazines
+    public int damage = 1;
     public bool infiniteMagazines = false; // Whether the gun has an infinite number of magazines
     public int bulletsInMagazine; // Number of bullets currently in the magazine
     public float range;
@@ -101,6 +102,7 @@ public class SimpleGunScript : MonoBehaviour
                     bullet.transform.Rotate(0f, 0f, bulletAngle);
                     bullet.GetComponent<SimpleBullet>().speed = bulletSpeed;
                     bullet.GetComponent<SimpleBullet>().timeTillDestruction = range;
+                    bullet.GetComponent<SimpleBullet>().damage = damage;
                     bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
                 }
                 else
@@ -113,6 +115,7 @@ public class SimpleGunScript : MonoBehaviour
                         float bulletAngle = (-totalSpreadAngle / 2f) + (i * bulletSpread);
                         bullet.transform.Rotate(0f, 0f, bulletAngle);
                         bullet.GetComponent<SimpleBullet>().speed = bulletSpeed;
+                        bullet.GetComponent<SimpleBullet>().damage = damage;
                         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
                     }
                 }

@@ -35,7 +35,7 @@ public class SimpleBullet : MonoBehaviour
                 if(other.gameObject.GetComponent<TopDownMovement>().isDodging == false)
                 {
                     other.gameObject.GetComponent<TopDownMovement>().TakeDamage(damage);
-                    Destroy(gameObject);
+                    DestroySelf();
                 }
             }       
         }
@@ -48,21 +48,32 @@ public class SimpleBullet : MonoBehaviour
             else
             {
                 other.gameObject.GetComponentInParent<EnemyHealth>().TakeDamage(damage);
-                Destroy(gameObject);
+                DestroySelf();
             }
 
 
         }
+        if(other.gameObject.tag == "Blank")
+        {
+            DestroySelf();
+        }
 
         if (other.gameObject.tag == "Wall")
         {
-            Destroy(gameObject);
+            DestroySelf();
         }   
     }
 
     private IEnumerator WaitTillDeath()
     {
         yield return new WaitForSeconds(timeTillDestruction);
+        Destroy(gameObject);
+    }
+
+    private void DestroySelf()
+    {
+        // Animation and particles etc
+
         Destroy(gameObject);
     }
 }

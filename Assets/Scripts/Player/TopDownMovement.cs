@@ -18,6 +18,7 @@ public class TopDownMovement : MonoBehaviour
     public bool canTakeDamage;
     public float healthTimer;
     private float Htimer;
+    public float blankRadius;
 
     [Header("Movement")]
     public float runSpeed = 20.0f;
@@ -157,6 +158,14 @@ public class TopDownMovement : MonoBehaviour
                 Debug.Log("Shield Just Got Hit, Shield is now: " + shield);
                 if (shield <= 0)
                 {
+                    Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, blankRadius);
+                    foreach (Collider2D hitCollider in hitColliders)
+                    {
+                        if(hitCollider.tag == "Bullet")
+                        {
+                            Destroy(hitCollider.gameObject);
+                        }
+                    }
                     Debug.Log("Players Shield Just Broke");
                     shield = 0;
                 }
