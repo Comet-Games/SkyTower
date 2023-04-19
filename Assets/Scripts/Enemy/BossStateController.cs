@@ -55,6 +55,12 @@ public class BossStateController : MonoBehaviour
         healthBar.SetName(name);
     }
 
+    private void Awake()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        target = player.transform;
+    }
+
     private void Update()
     {
         float healthPercentage = ((float)enemyHealth.health / maxHealth);

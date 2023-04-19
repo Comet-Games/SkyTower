@@ -424,13 +424,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radiusCol: {fileID: 0}
-  enemyHealth: {fileID: 0}
+  enemyHealth: {fileID: 1092479394993129045}
   target: {fileID: 0}
   health: 50
   shield: 0
   healthTimer: 0
   gun: {fileID: 4401495228854987354}
-  gunObj: {fileID: 0}
+  gunObj: {fileID: 4401495228854987355}
   circleGun: {fileID: 4401495228691069574}
   healthBar: {fileID: 5468609813767879891}
   name: BOSS 1
