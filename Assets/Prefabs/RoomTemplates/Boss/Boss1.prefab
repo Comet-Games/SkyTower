@@ -237,9 +237,14 @@ MonoBehaviour:
   SelectedMode: 0
   HybridDoorModeData:
     DefaultLength: 1
-    DoorLines: []
+    DoorLines:
+    - From: {x: 6, y: -9, z: 0}
+      To: {x: 7, y: -9, z: 0}
+      Length: 1
   ManualDoorModeData:
-    DoorsList: []
+    DoorsList:
+    - From: {x: 6, y: -9, z: 0}
+      To: {x: 7, y: -9, z: 0}
   SimpleDoorModeData:
     DistanceFromCorners: 3
     DoorLength: 2
@@ -8821,6 +8826,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 12.4
       objectReference: {fileID: 0}
+    - target: {fileID: 5468609813424723372, guid: 6c7a37e2857545e40a3c73f9e2604a56, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5468609813670729036, guid: 6c7a37e2857545e40a3c73f9e2604a56, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.6
@@ -8840,6 +8849,14 @@ PrefabInstance:
     - target: {fileID: 5468609814038036070, guid: 6c7a37e2857545e40a3c73f9e2604a56, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468609814129908394, guid: 6c7a37e2857545e40a3c73f9e2604a56, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468609814129908394, guid: 6c7a37e2857545e40a3c73f9e2604a56, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12.55
       objectReference: {fileID: 0}
     - target: {fileID: 5468609814467187091, guid: 6c7a37e2857545e40a3c73f9e2604a56, type: 3}
       propertyPath: m_LocalPosition.x
