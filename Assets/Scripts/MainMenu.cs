@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
             }
             if(doorNum == 2)
             {
-                SceneManager.LoadScene("Tutorial");
+                SceneManager.LoadScene("EnemyTester");
             }
             if(doorNum == 3)
             {
