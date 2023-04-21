@@ -1826,7 +1826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2606930521560248604
 Transform:
   m_ObjectHideFlags: 0
@@ -3319,7 +3319,7 @@ GameObject:
   - component: {fileID: 4498266590854909564}
   - component: {fileID: 7656756081023351312}
   m_Layer: 0
-  m_Name: Room template
+  m_Name: EnemyRoom 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

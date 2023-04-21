@@ -272,7 +272,7 @@ MonoBehaviour:
     RootGameObject: {fileID: 0}
     Timeout: 10000
     RepeatModeOverride: 2
-    MinimumRoomDistance: 1
+    MinimumRoomDistance: 2
   PostProcessConfig:
     InitializeSharedTilemaps: 1
     TilemapLayersStructure: 0

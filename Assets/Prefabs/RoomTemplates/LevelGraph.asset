@@ -195,6 +195,10 @@ MonoBehaviour:
   - {fileID: 1131773548092125874, guid: 44be16ad112624242953090c182691de, type: 3}
   - {fileID: 1131773548092125874, guid: 3acd35c926bcd5646a280d11758a9a0e, type: 3}
   - {fileID: 3968304697161877905, guid: 8f617f316636ddd42b9d38fa870a208b, type: 3}
+  - {fileID: 3968304697161877905, guid: bb3b568b0eddc194c9945f891d908b0f, type: 3}
+  - {fileID: 3968304697161877905, guid: 6f672d7d8bb81244fb86bf8d23b8e275, type: 3}
+  - {fileID: 3968304697161877905, guid: b4463bbbb15c5034d8de788356a3caf0, type: 3}
+  - {fileID: 3968304697161877905, guid: a2583bb7f0871474daffa18ffead8b52, type: 3}
   DefaultRoomTemplateSets: []
   Rooms:
   - {fileID: -2878308893230791011}
@@ -208,8 +212,8 @@ MonoBehaviour:
   - {fileID: 7712238099737062023}
   - {fileID: -2859673265069845179}
   EditorData:
-    PanOffset: {x: 1321.6484, y: 140.42496}
-    Zoom: 0.2353747
+    PanOffset: {x: 500.88568, y: 170.46123}
+    Zoom: 0.2993803
   RoomType: Edgar.Unity.Room
   ConnectionType: Edgar.Unity.Connection
 --- !u!114 &481167482795580901
