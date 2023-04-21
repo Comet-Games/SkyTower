@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public int doorNum;
+    public SceneLoader sceneLoader;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,7 +18,8 @@ public class MainMenu : MonoBehaviour
             }
             if(doorNum == 2)
             {
-                SceneManager.LoadScene("EnemyTester");
+                sceneLoader.startScene = true;
+                //SceneManager.LoadScene("EnemyTester");
             }
             if(doorNum == 3)
             {
