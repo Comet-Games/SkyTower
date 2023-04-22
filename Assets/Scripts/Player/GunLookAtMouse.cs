@@ -27,6 +27,10 @@ public class GunLookAtMouse : MonoBehaviour
             {
                 playerTransform = GetComponentInParent<BossStateController>().transform;
             }
+            else if (GetComponentInParent<Enemy>())
+            {
+                playerTransform = GetComponentInParent<Enemy>().transform;
+            }
 
         }
     }
