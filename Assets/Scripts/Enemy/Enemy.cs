@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     Animator animator;
     bool shooting;
 
-    private void Awake()
+    private void Start()
     {
         enemyHealth = GetComponent<EnemyHealth>();
         agent = GetComponent<NavMeshAgent>();

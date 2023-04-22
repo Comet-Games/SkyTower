@@ -162,14 +162,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1458253628247066657}
-  - component: {fileID: 4167417598904176992}
   - component: {fileID: 1458253628247066656}
   - component: {fileID: 1458253628247066663}
   - component: {fileID: 1458253628247066671}
-  - component: {fileID: 1458253628247066662}
   - component: {fileID: 1458253628247066669}
   - component: {fileID: 1458253628247066668}
   - component: {fileID: 1458253628247066670}
+  - component: {fileID: 4167417598904176992}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -185,7 +184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1458253628247066661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -195,19 +194,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4167417598904176992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458253628247066661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69925eb3f765d634db5dbf1e8673f2c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 3e123230c5ce0784d87ee96c0e8b5645, type: 2}
 --- !u!212 &1458253628247066656
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -292,35 +278,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &1458253628247066662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1458253628247066661}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa738ac7598ee24f8eaaf8738da8f79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radiusCol: {fileID: 1458253628247066663}
-  enemyHealth: {fileID: 0}
-  health: 5
-  shield: 0
-  healthTimer: 0.1
-  weaponObj: {fileID: 0}
-  AimSpeed: 100
-  holdingWeapon: 0
-  fireRate: 0.3
-  magazineSize: 50
-  reloadTime: 1
-  bulletSpeed: 3
-  bulletSpread: 20
-  bulletsPerShot: 1
-  maxMagazines: 5
-  infiniteMagazines: 1
-  radius: 20
 --- !u!114 &1458253628247066669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +328,19 @@ MonoBehaviour:
   shield: 0
   canTakeDamage: 1
   healthTimer: 0.1
+--- !u!114 &4167417598904176992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458253628247066661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69925eb3f765d634db5dbf1e8673f2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 3e123230c5ce0784d87ee96c0e8b5645, type: 2}
 --- !u!1001 &1458253628421496614
 PrefabInstance:
   m_ObjectHideFlags: 0
