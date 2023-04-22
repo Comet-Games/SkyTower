@@ -11,6 +11,7 @@ public class EnemyData : ScriptableObject
     public Rarity rarity;
     public enum Rarity { common, uncommon, rare, epic, legendary, mythic };
     public Animator enemyAnimation;
+    public float moveSpeed = 4;
 
     [Header("Health Stuff")]
     public int health = 5;
@@ -19,8 +20,8 @@ public class EnemyData : ScriptableObject
 
     [Header("Weapon Stuff")]
     public Sprite weaponSprite;
-    public float AimSpeed;
-    public bool holdingWeapon;
+    public float AimSpeed = 100;
+    public bool holdingWeapon = true;
     public float fireRate = 0.5f; // Time between shots
     public int magazineSize = 10; // Maximum number of bullets in a magazine
     public float reloadTime = 2f; // Time it takes to reload

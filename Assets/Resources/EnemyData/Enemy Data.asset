@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2f2901aa05883044b9fc3a42991179b, type: 3}
-  m_Name: CommonEnemy1
+  m_Name: Enemy Data
   m_EditorClassIdentifier: 
-  enemyName: Sarah
+  enemyName: David
   rarity: 0
   enemyAnimation: {fileID: 0}
-  moveSpeed: 4
-  health: 3
+  moveSpeed: 3
+  health: 4
   shield: 0
   healthTimer: 0.1
   weaponSprite: {fileID: 0}
   AimSpeed: 100
   holdingWeapon: 1
-  fireRate: 0.3
-  magazineSize: 50
-  reloadTime: 1
+  fireRate: 1.5
+  magazineSize: 6
+  reloadTime: 2
   bulletSpeed: 3
   bulletSpread: 20
-  bulletsPerShot: 1
+  bulletsPerShot: 2
   maxMagazines: 5
   infiniteMagazines: 1
-  radius: 30
+  radius: 50

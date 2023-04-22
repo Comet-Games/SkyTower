@@ -81,6 +81,7 @@ public class Enemy : MonoBehaviour
 
     void SetAgentPosition()
     {
+        GetComponent<NavMeshAgent>().speed = enemyData.moveSpeed;
         agent.SetDestination(new Vector3(target.position.x, target.position.y, transform.position.z));
         animator.SetBool("Moving", true);
     }
