@@ -1296,6 +1296,7 @@ GameObject:
   - component: {fileID: 1980088322611363110}
   - component: {fileID: 740003096461624109}
   - component: {fileID: 1980088323231948253}
+  - component: {fileID: 5535701107495803490}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -1537,6 +1538,7 @@ MonoBehaviour:
   animator: {fileID: 1980088322071836326}
   body: {fileID: 0}
   mouseObj: {fileID: 1980088322798952265}
+  inventory: {fileID: 0}
   health: 5
   shield: 1
   canTakeDamage: 0
@@ -1600,6 +1602,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.2}
   serializedVersion: 2
   m_Radius: 0.48
+--- !u!114 &5535701107495803490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980088322611363104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5309683eac134094383f70a61596ce92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guns: []
+  weaponIndex: 0
 --- !u!1 &1980088322625991171
 GameObject:
   m_ObjectHideFlags: 0
@@ -4672,7 +4688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9053620609781392874, guid: 9626988235eca944eb84886f0e7b1190, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9053620609781392875, guid: 9626988235eca944eb84886f0e7b1190, type: 3}
       propertyPath: m_RootOrder

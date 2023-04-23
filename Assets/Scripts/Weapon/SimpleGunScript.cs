@@ -21,7 +21,7 @@ public class SimpleGunScript : MonoBehaviour
     public int currentMagazines; // Number of magazines currently available
 
     private float nextFire = 0f;
-    private bool reloading = false;
+    public bool reloading = false;
 
     public AudioSource audioSource;
     public AudioClip shoot;

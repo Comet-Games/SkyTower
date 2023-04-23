@@ -11,6 +11,7 @@ public class TopDownMovement : MonoBehaviour
     public Animator animator;
     public Rigidbody2D body;
     public Transform mouseObj;
+    public Inventory inventory;
 
     [Header("Health")]
     public int health = 5;
@@ -46,6 +47,7 @@ public class TopDownMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         Cursor.visible = false;
+        inventory = GetComponent<Inventory>();
     }
 
     void Update()
@@ -88,6 +90,14 @@ public class TopDownMovement : MonoBehaviour
                 Htimer = 0;
                 canTakeDamage = true;
             }
+        }
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            inventory.PrevWeapon();
+        }
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            inventory.NextWeapon();
         }
     }
 
@@ -182,6 +192,11 @@ public class TopDownMovement : MonoBehaviour
             }
             canTakeDamage = false;
         }
+    }
+
+    public void PickupWeapon(SimpleGunScript weapon)
+    {
+        inventory.AddWeapon(weapon);
     }
 
 }
