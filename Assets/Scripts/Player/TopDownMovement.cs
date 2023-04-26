@@ -12,6 +12,7 @@ public class TopDownMovement : MonoBehaviour
     public Rigidbody2D body;
     public Transform mouseObj;
     public Inventory inventory;
+    public WeaponCanvas weaponCanvas;
 
     [Header("Health")]
     public int health = 5;
@@ -48,6 +49,7 @@ public class TopDownMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         Cursor.visible = false;
         inventory = GetComponent<Inventory>();
+        weaponCanvas.ChangeWeaponSprite(inventory.GetCurrentWeaponSprite());
     }
 
     void Update()
@@ -94,10 +96,12 @@ public class TopDownMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q))
         {
             inventory.PrevWeapon();
+            weaponCanvas.ChangeWeaponSprite(inventory.GetCurrentWeaponSprite());
         }
         if(Input.GetKeyDown(KeyCode.E))
         {
             inventory.NextWeapon();
+            weaponCanvas.ChangeWeaponSprite(inventory.GetCurrentWeaponSprite());
         }
     }
 

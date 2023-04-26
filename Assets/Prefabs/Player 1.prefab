@@ -1539,6 +1539,7 @@ MonoBehaviour:
   body: {fileID: 0}
   mouseObj: {fileID: 1980088322798952265}
   inventory: {fileID: 0}
+  weaponCanvas: {fileID: 7309291066914826153}
   health: 5
   shield: 1
   canTakeDamage: 0
@@ -3211,6 +3212,7 @@ GameObject:
   - component: {fileID: 5109972572686227353}
   - component: {fileID: 3252494770179418578}
   - component: {fileID: 5045547804843342584}
+  - component: {fileID: 7309291066914826153}
   m_Layer: 5
   m_Name: Bullet+WeaponCanvas
   m_TagString: Untagged
@@ -3300,6 +3302,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7309291066914826153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420469677194566285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a233ddf99a4464b8df2f9097ce56d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponImage: {fileID: 790370683659829239}
+  bulletHolder: {fileID: 6670166933764889427}
 --- !u!1 &4366449240995832002
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,6 +46,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public Sprite GetCurrentWeaponSprite()
+    {
+        return guns[weaponIndex].GetComponent<SpriteRenderer>().sprite;
+    }
+
     public void SwapWeapon(SimpleGunScript newGun)
     {
         // find the index of the current weapon in the array
