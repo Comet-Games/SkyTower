@@ -203,4 +203,8 @@ public class TopDownMovement : MonoBehaviour
         inventory.AddWeapon(weapon);
     }
 
+    public void UpdateBullets(int amount)
+    {
+        weaponCanvas.UpdateBulletCountSprites(amount);
+    }
 }

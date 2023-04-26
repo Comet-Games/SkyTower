@@ -65,6 +65,7 @@ public class SimpleGunScript : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Fire(true);
+                GetComponentInParent<TopDownMovement>().UpdateBullets(bulletsInMagazine);
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -166,6 +167,7 @@ public class SimpleGunScript : MonoBehaviour
 
     private IEnumerator ReloadDelay()
     {
+        GetComponentInParent<TopDownMovement>().UpdateBullets(0);
         yield return new WaitForSeconds(reloadTime);
         reloading = false;
         if (GetComponentInParent<TopDownMovement>())
