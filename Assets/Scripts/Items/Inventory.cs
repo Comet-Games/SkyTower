@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public SimpleGunScript[] guns;
+    public Gun[] guns;
     public int weaponIndex;
 
     private void Start()
     {
-        guns = GetComponentsInChildren<SimpleGunScript>();
-        foreach(SimpleGunScript gun in guns)
+        guns = GetComponentsInChildren<Gun>();
+        foreach(Gun gun in guns)
         {
             gun.gameObject.SetActive(false);
             NextWeapon();
@@ -51,7 +51,7 @@ public class Inventory : MonoBehaviour
         return guns[weaponIndex].GetComponent<SpriteRenderer>().sprite;
     }
 
-    public void SwapWeapon(SimpleGunScript newGun)
+    public void SwapWeapon(Gun newGun)
     {
         // find the index of the current weapon in the array
         int currentIndex = Array.IndexOf(guns, guns[weaponIndex]);
@@ -69,7 +69,7 @@ public class Inventory : MonoBehaviour
         weaponIndex = currentIndex;
     }
 
-    public void AddWeapon(SimpleGunScript newGun)
+    public void AddWeapon(Gun newGun)
     {
         // if the inventory is full (i.e. there are already 9 weapons)
         if (guns.Length == 9)
@@ -80,7 +80,7 @@ public class Inventory : MonoBehaviour
         else
         {
             // add the new weapon to the end of the array
-            SimpleGunScript[] newGuns = new SimpleGunScript[guns.Length + 1];
+            Gun[] newGuns = new Gun[guns.Length + 1];
             for (int i = 0; i < guns.Length; i++)
             {
                 newGuns[i] = guns[i];

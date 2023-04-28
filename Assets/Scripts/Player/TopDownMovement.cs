@@ -102,6 +102,7 @@ public class TopDownMovement : MonoBehaviour
         {
             inventory.NextWeapon();
             weaponCanvas.ChangeWeaponSprite(inventory.GetCurrentWeaponSprite());
+            
         }
     }
 
@@ -198,7 +199,7 @@ public class TopDownMovement : MonoBehaviour
         }
     }
 
-    public void PickupWeapon(SimpleGunScript weapon)
+    public void PickupWeapon(Gun weapon)
     {
         inventory.AddWeapon(weapon);
     }
