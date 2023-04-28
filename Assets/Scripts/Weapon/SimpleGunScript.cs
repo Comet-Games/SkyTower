@@ -65,7 +65,6 @@ public class SimpleGunScript : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Fire(true);
-                GetComponentInParent<TopDownMovement>().UpdateBullets(bulletsInMagazine);
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -86,6 +85,10 @@ public class SimpleGunScript : MonoBehaviour
         if (bulletsInMagazine <= 0)
         {
             Reload();
+            if (isPlayers)
+            {
+                GetComponentInParent<TopDownMovement>().UpdateBullets(0);
+            }
         }
         else
         {
@@ -94,8 +97,12 @@ public class SimpleGunScript : MonoBehaviour
                 nextFire = Time.time + fireRate;
 
                 bulletsInMagazine--;
+                if (isPlayers)
+                {
+                    GetComponentInParent<TopDownMovement>().UpdateBullets(bulletsInMagazine);
+                }
 
-                if(bulletsPerShot == 1)
+                if (bulletsPerShot == 1)
                 {
                     GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPos.position, bulletSpawnPos.rotation);
                     bullet.GetComponent<SimpleBullet>().isPlayers = isPlayers;
