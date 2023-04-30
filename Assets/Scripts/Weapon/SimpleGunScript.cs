@@ -27,30 +27,16 @@ public class SimpleGunScript : MonoBehaviour
     public AudioClip shoot;
     public AudioClip reload;
 
-    public Slider reloadSlider;
-
     private void Start()
     {
         currentMagazines = maxMagazines;
         bulletsInMagazine = magazineSize;
         audioSource = GetComponent<AudioSource>();
 
-        if(GetComponentInParent<TopDownMovement>())
-        {
-            reloadSlider.minValue = 0f;
-            reloadSlider.maxValue = reloadTime;
-            reloadSlider.value = reloadTime; // start at the right
-            reloadSlider.gameObject.SetActive(false);
-        }
-
     }
 
     private void Awake()
     {
-        if(GetComponentInParent<TopDownMovement>())
-        {
-            GetComponentInParent<TopDownMovement>().holdingWeapon = true;
-        }
         if(GetComponentInParent<SimpleFollowEnemy>())
         {
             GetComponentInParent<SimpleFollowEnemy>().holdingWeapon = true;
@@ -58,37 +44,11 @@ public class SimpleGunScript : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if(GetComponentInParent<TopDownMovement>())
-        {
-            if (Input.GetMouseButton(0))
-            {
-                Fire(true);
-            }
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Reload();
-            }
-        }
-
-
-        // Update the slider value if reloading
-        if (reloading && GetComponentInParent<TopDownMovement>())
-        {
-            reloadSlider.value = reloadTime - (Time.time - reloadStartTime);
-        }
-    }
-
     public void Fire(bool isPlayers)
     {
         if (bulletsInMagazine <= 0)
         {
             Reload();
-            if (isPlayers)
-            {
-                GetComponentInParent<TopDownMovement>().UpdateBullets(0);
-            }
         }
         else
         {
@@ -97,10 +57,6 @@ public class SimpleGunScript : MonoBehaviour
                 nextFire = Time.time + fireRate;
 
                 bulletsInMagazine--;
-                if (isPlayers)
-                {
-                    GetComponentInParent<TopDownMovement>().UpdateBullets(bulletsInMagazine);
-                }
 
                 if (bulletsPerShot == 1)
                 {
@@ -142,10 +98,6 @@ public class SimpleGunScript : MonoBehaviour
             if (!reloading && currentMagazines > 0 && bulletsInMagazine < magazineSize)
             {
                 reloading = true;
-                if (GetComponentInParent<TopDownMovement>())
-                {
-                    reloadSlider.gameObject.SetActive(true);
-                }
                 reloadStartTime = Time.time; // store the start time of reloading
                 audioSource.PlayOneShot(reload, 0.7f);
                 currentMagazines--;
@@ -158,10 +110,6 @@ public class SimpleGunScript : MonoBehaviour
             if (!reloading && bulletsInMagazine < magazineSize)
             {
                 reloading = true;
-                if (GetComponentInParent<TopDownMovement>())
-                {
-                    reloadSlider.gameObject.SetActive(true);
-                }
                 reloadStartTime = Time.time; // store the start time of reloading
                 audioSource.PlayOneShot(reload, 0.7f);
                 currentMagazines = 1;
@@ -174,13 +122,8 @@ public class SimpleGunScript : MonoBehaviour
 
     private IEnumerator ReloadDelay()
     {
-        GetComponentInParent<TopDownMovement>().UpdateBullets(0);
         yield return new WaitForSeconds(reloadTime);
         reloading = false;
-        if (GetComponentInParent<TopDownMovement>())
-        {
-            reloadSlider.gameObject.SetActive(false);
-        }
     }
 
 

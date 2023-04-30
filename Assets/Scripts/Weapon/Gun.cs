@@ -11,9 +11,10 @@ public class Gun : MonoBehaviour
     private int currentMagazines; // Number of magazines currently available*/
 
     private float nextFire = 0f;
-    public bool reloading = false;
+    [HideInInspector]public bool reloading = false;
 
-    public AudioSource audioSource;
+    private AudioSource audioSource;
+    private SpriteRenderer spriteRenderer;
 
     public Slider reloadSlider;
 
@@ -32,6 +33,8 @@ public class Gun : MonoBehaviour
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = gunData.weaponSprite;
         GetComponentInParent<TopDownMovement>().holdingWeapon = true;
     }
 
@@ -140,5 +143,6 @@ public class Gun : MonoBehaviour
         yield return new WaitForSeconds(gunData.reloadTime);
         reloading = false;
         reloadSlider.gameObject.SetActive(false);
+        GetComponentInParent<TopDownMovement>().UpdateBullets(bulletsInMagazine);
     }
 }

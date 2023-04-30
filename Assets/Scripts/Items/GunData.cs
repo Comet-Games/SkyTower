@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Guns/GunData", fileName = "Gun Data")]
 public class GunData : ScriptableObject
 {
+    public Sprite weaponSprite;
     public float fireRate = 0.5f; // Time between shots
     public int magazineSize = 10; // Maximum number of bullets in a magazine
     public float reloadTime = 2f; // Time it takes to reload

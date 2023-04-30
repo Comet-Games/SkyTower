@@ -40,7 +40,6 @@ public class Inventory : MonoBehaviour
 
             // move to the previous weapon in the array
             weaponIndex = (weaponIndex + guns.Length - 1) % guns.Length;
-
             // activate the new weapon
             guns[weaponIndex].gameObject.SetActive(true);
         }
