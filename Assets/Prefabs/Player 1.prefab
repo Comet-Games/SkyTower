@@ -1540,6 +1540,7 @@ MonoBehaviour:
   mouseObj: {fileID: 1980088322798952265}
   inventory: {fileID: 5535701107495803490}
   weaponCanvas: {fileID: 7309291066914826153}
+  reloadSlider: {fileID: 5822492281385374343}
   health: 5
   shield: 1
   canTakeDamage: 0
@@ -1615,8 +1616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5309683eac134094383f70a61596ce92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guns:
-  - {fileID: 4410046275361394456}
+  guns: []
   weaponIndex: 0
 --- !u!1 &1980088322625991171
 GameObject:
@@ -4731,7 +4731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9053620609781392874, guid: 9626988235eca944eb84886f0e7b1190, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9053620609781392875, guid: 9626988235eca944eb84886f0e7b1190, type: 3}
       propertyPath: m_RootOrder

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Cursor = UnityEngine.Cursor;
 
@@ -13,6 +13,7 @@ public class TopDownMovement : MonoBehaviour
     public Transform mouseObj;
     public Inventory inventory;
     public WeaponCanvas weaponCanvas;
+    public Slider reloadSlider;
 
     [Header("Health")]
     public int health = 5;

@@ -23,7 +23,7 @@ public class Gun : MonoBehaviour
         currentMagazines = gunData.maxMagazines;
         bulletsInMagazine = gunData.magazineSize;
         audioSource = GetComponent<AudioSource>();
-
+        reloadSlider = GetComponentInParent<TopDownMovement>().reloadSlider;
         reloadSlider.minValue = 0f;
         reloadSlider.maxValue = gunData.reloadTime;
         reloadSlider.value = gunData.reloadTime; // start at the right

@@ -20,7 +20,8 @@ public class Inventory : MonoBehaviour
     public void NextWeapon()
     {
         if (guns[weaponIndex].reloading == false)
-        {        
+        {
+
             // deactivate the current weapon
             guns[weaponIndex].gameObject.SetActive(false);
             // move to the next weapon in the array
@@ -87,5 +88,10 @@ public class Inventory : MonoBehaviour
             newGuns[guns.Length] = newGun;
             guns = newGuns;
         }
+    }
+
+    public void GetGunFromPrefab(GameObject gunObject)
+    {
+        AddWeapon(gunObject.GetComponent<Gun>());
     }
 }
