@@ -18,7 +18,7 @@ MonoBehaviour:
   moveSpeed: 4
   health: 3
   shield: 0
-  healthTimer: 0.1
+  healthTimer: 0.001
   weaponSprite: {fileID: 0}
   AimSpeed: 100
   holdingWeapon: 1
