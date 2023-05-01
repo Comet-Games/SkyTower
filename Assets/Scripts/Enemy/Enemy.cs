@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
         {
             gunScript = GetComponentInChildren<SimpleGunScript>();
             enemyData.holdingWeapon = true;
+            gunScript.GetComponent<SpriteRenderer>().sprite = enemyData.weaponSprite;
             gunScript.fireRate = enemyData.fireRate;
             gunScript.magazineSize = enemyData.magazineSize;
             gunScript.reloadTime = enemyData.reloadTime;

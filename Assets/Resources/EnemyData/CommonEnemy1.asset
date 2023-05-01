@@ -19,7 +19,7 @@ MonoBehaviour:
   health: 3
   shield: 0
   healthTimer: 0.001
-  weaponSprite: {fileID: 0}
+  weaponSprite: {fileID: -1866006617, guid: 4bcc5c50e5ab60441b52c354665a848c, type: 3}
   AimSpeed: 100
   holdingWeapon: 1
   fireRate: 0.3
