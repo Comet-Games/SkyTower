@@ -3103,7 +3103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4980687312863463951}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.22, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3479,6 +3479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickup: {fileID: 4894138863287907393, guid: af05111689cb48a4ea1312bd0f45109b, type: 3}
   spawn: {fileID: 7382087370575279358}
+  emptySprite: {fileID: 485070426, guid: b0cd3740299d8ec47aab969c52a934fd, type: 3}
 --- !u!61 &1741637492767402165
 BoxCollider2D:
   m_ObjectHideFlags: 0

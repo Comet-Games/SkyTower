@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class VendingMachine : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class VendingMachine : MonoBehaviour
     private GameObject player;
     public GameObject pickup;
     public Transform spawn;
+    public Sprite emptySprite;
 
     private bool used = false;
 
@@ -24,6 +26,8 @@ public class VendingMachine : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 used = true;
+                GetComponentInChildren<SpriteRenderer>().sprite = emptySprite;
+                GetComponentInChildren<Light2D>().gameObject.SetActive(false);
                 Instantiate(pickup, spawn);
             }
         }
