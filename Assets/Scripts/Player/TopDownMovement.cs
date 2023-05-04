@@ -14,6 +14,7 @@ public class TopDownMovement : MonoBehaviour
     public Inventory inventory;
     public WeaponCanvas weaponCanvas;
     public Slider reloadSlider;
+    public GameObject interactableText;
 
     [Header("Health")]
     public int health = 5;
@@ -208,5 +209,15 @@ public class TopDownMovement : MonoBehaviour
     public void UpdateBullets(int amount)
     {
         weaponCanvas.UpdateBulletCountSprites(amount);
+    }
+
+    public void ActivateInteractableText()
+    {
+        interactableText.SetActive(true);
+    }
+
+    public void DeactivateInteractableText()
+    {
+        interactableText.SetActive(false);
     }
 }

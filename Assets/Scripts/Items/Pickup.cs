@@ -50,8 +50,8 @@ public class Pickup : MonoBehaviour
         if(other.tag == "Player")
         {
             player = other.gameObject;
-            inRange = true; 
-            Debug.Log("Player in range");
+            inRange = true;
+            player.GetComponent<TopDownMovement>().ActivateInteractableText();
         }
     }
 
@@ -60,7 +60,7 @@ public class Pickup : MonoBehaviour
         if (other.tag == "Player")
         {
             inRange = false;
-            Debug.Log("Player out of range");
+            player.GetComponent<TopDownMovement>().DeactivateInteractableText();
         }
     }
 }
