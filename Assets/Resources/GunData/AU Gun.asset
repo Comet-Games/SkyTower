@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6189c2284df0642a628ef995dac710, type: 3}
   m_Name: AU Gun
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: a4470fd76c64b6b4dad02d02a3c72898, type: 3}
+  weaponSprite: {fileID: 337378853, guid: 4bcc5c50e5ab60441b52c354665a848c, type: 3}
   gunName: AU Gun
   fireRate: 0.2
   magazineSize: 1

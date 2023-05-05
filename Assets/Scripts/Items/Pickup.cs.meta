@@ -3,7 +3,11 @@ guid: be0c927d187b9f34ea180bb16c946cf1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gunData: {instanceID: 0}
+  - gunPrefab: {instanceID: 0}
+  - outlineMat: {fileID: 2100000, guid: 46144ddc348d76d459e8771dc540bb27, type: 2}
+  - defaultMat: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

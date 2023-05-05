@@ -1,5 +1,4 @@
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Pickup : MonoBehaviour
 {
@@ -8,11 +7,18 @@ public class Pickup : MonoBehaviour
     private GameObject player;
     public GunData gunData;
     public GameObject gunPrefab;
+    public Material outlineMat;
     // Start is called before the first frame update
     void Start()
     {
         LoadGunData();
         GetComponent<SpriteRenderer>().sprite = gunData.weaponSprite;
+    }
+
+    private void Awake()
+    {
+        outlineMat = GetComponent<SpriteRenderer>().material;
+        outlineMat.SetFloat("_OutlineThickness", 0);
     }
 
     // Update is called once per frame
@@ -49,6 +55,7 @@ public class Pickup : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            outlineMat.SetFloat("_OutlineThickness", 2);
             player = other.gameObject;
             inRange = true;
             player.GetComponent<TopDownMovement>().ActivateInteractableText();
@@ -59,6 +66,7 @@ public class Pickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            outlineMat.SetFloat("_OutlineThickness", 0);
             inRange = false;
             player.GetComponent<TopDownMovement>().DeactivateInteractableText();
         }

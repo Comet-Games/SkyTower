@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6189c2284df0642a628ef995dac710, type: 3}
   m_Name: Makarov
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 21300000, guid: 61320a744ee088a4c8701554e58e5293, type: 3}
+  weaponSprite: {fileID: -434135446, guid: 4bcc5c50e5ab60441b52c354665a848c, type: 3}
   gunName: Makarov
   fireRate: 0.15
   magazineSize: 7

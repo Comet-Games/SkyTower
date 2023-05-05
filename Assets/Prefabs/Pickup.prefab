@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 46144ddc348d76d459e8771dc540bb27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunData: {fileID: 0}
   gunPrefab: {fileID: 5518515125484531965, guid: 078c2a7d363f31d4a8d90ee0bff9ac21, type: 3}
+  outlineMat: {fileID: 2100000, guid: 46144ddc348d76d459e8771dc540bb27, type: 2}
 --- !u!58 &7073311838005049531
 CircleCollider2D:
   m_ObjectHideFlags: 0
