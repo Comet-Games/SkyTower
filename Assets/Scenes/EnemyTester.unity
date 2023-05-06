@@ -271,8 +271,8 @@ MonoBehaviour:
   GeneratorConfig:
     RootGameObject: {fileID: 0}
     Timeout: 10000
-    RepeatModeOverride: 2
-    MinimumRoomDistance: 2
+    RepeatModeOverride: 0
+    MinimumRoomDistance: 3
   PostProcessConfig:
     InitializeSharedTilemaps: 1
     TilemapLayersStructure: 0

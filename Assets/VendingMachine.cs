@@ -10,6 +10,7 @@ public class VendingMachine : MonoBehaviour
     public GameObject pickup;
     public Transform spawn;
     public Sprite emptySprite;
+    public Material outlineMat;
 
     private bool used = false;
 
@@ -33,10 +34,17 @@ public class VendingMachine : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        outlineMat = GetComponentInChildren<SpriteRenderer>().material;
+        outlineMat.SetFloat("_OutlineThickness", 0);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player" && used == false)
         {
+            outlineMat.SetFloat("_OutlineThickness", 2);
             player = other.gameObject;
             inRange = true;
             Debug.Log("Player in range");
@@ -48,6 +56,7 @@ public class VendingMachine : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            outlineMat.SetFloat("_OutlineThickness", 0);
             inRange = false;
             Debug.Log("Player out of range");
             player.GetComponent<TopDownMovement>().DeactivateInteractableText();

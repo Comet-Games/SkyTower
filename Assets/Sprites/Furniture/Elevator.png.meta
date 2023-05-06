@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b0cd3740299d8ec47aab969c52a934fd
+guid: e674912e8410b9945ae9fa14a247680a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,43 +129,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VendingMachines_0
+      name: Elevator_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 48
-        height: 70
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60c9609f87daec141bfe4c7391d7dab5
-      internalID: 485070426
+      spriteID: c1eb5b06548c3164b8fda7cc20cc8872
+      internalID: -582483580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VendingMachines_1
+      name: Elevator_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 2
-        width: 48
-        height: 70
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d864bf54b75d98499a8cba95a0d59b9
-      internalID: -1990145744
+      spriteID: 85311c730460dee40957d6bc57541593
+      internalID: 1196908765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elevator_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc832e1b5a99f649892042257265381
+      internalID: -2038442378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elevator_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c867f66863eeef44fac157fd22dbbf31
+      internalID: -1948388981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elevator_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 220d5caffc18cdf45a4caa15c6a1c403
+      internalID: -818280280
       vertices: []
       indices: 
       edges: []
@@ -181,8 +244,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      VendingMachines_0: 485070426
-      VendingMachines_1: -1990145744
+      Elevator_0: -582483580
+      Elevator_3: -1948388981
+      Elevator_4: -818280280
+      Elevator_1: 1196908765
+      Elevator_2: -2038442378
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

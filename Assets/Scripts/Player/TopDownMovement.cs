@@ -166,9 +166,9 @@ public class TopDownMovement : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-
         if (canTakeDamage)
-        {        
+        {
+            StartCoroutine(GetComponentInChildren<CameraShake>().Shake(0.2f, 0.5f));
             if (shield > 0)
             {
                 shield--;
