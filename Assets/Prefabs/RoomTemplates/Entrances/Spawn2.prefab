@@ -684,6 +684,7 @@ MonoBehaviour:
   DistanceFromCorners: 1
   DoorLength: 1
   DoorsList: []
+  Socket: {fileID: 0}
   SelectedMode: 0
   HybridDoorModeData:
     DefaultLength: 1
@@ -693,6 +694,7 @@ MonoBehaviour:
   SimpleDoorModeData:
     DistanceFromCorners: 4
     DoorLength: 2
+    Socket: {fileID: 0}
     Mode: 0
     VerticalDoors:
       Length: 1
@@ -704,6 +706,8 @@ MonoBehaviour:
       Margin1: 1
       Margin2: 1
       Enabled: 1
+  DefaultSocket: {fileID: 0}
+  DefaultDirection: 0
 --- !u!1 &1706912865694888371
 GameObject:
   m_ObjectHideFlags: 0

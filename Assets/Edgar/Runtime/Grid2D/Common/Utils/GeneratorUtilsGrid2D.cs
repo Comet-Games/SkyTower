@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Edgar.Geometry;
 using Edgar.GraphBasedGenerator.Common;
+using Edgar.GraphBasedGenerator.Common.Doors;
 using Edgar.GraphBasedGenerator.Grid2D;
 using UnityEditor;
 using UnityEngine;
@@ -13,7 +14,11 @@ namespace Edgar.Unity
 {
     internal static class GeneratorUtilsGrid2D
     {
-        public static DungeonGeneratorLevelGrid2D TransformLayout(LayoutGrid2D<RoomBase> layout, LevelDescriptionGrid2D levelDescription, GameObject rootGameObject)
+        public static DungeonGeneratorLevelGrid2D TransformLayout(
+            LayoutGrid2D<RoomBase> layout, 
+            LevelDescriptionGrid2D levelDescription,
+            GameObject rootGameObject,
+            RoomTemplatePrefabModeGrid2D roomTemplatePrefabMode)
         {
             // var layoutCenter = GetLayoutCenter(layout);
             var prefabToRoomTemplateMapping = levelDescription.GetPrefabToRoomTemplateMapping();
@@ -31,7 +36,7 @@ namespace Edgar.Unity
                 var roomTemplatePrefab = prefabToRoomTemplateMapping.GetByValue(layoutRoom.RoomTemplate);
 
                 // Instantiate the room template
-                var roomTemplateInstance = InstantiateRoomTemplate(roomTemplatePrefab);
+                var roomTemplateInstance = InstantiateRoomTemplate(roomTemplatePrefab, roomTemplatePrefabMode);
 
                 roomTemplateInstance.transform.SetParent(roomTemplateInstancesRoot.transform);
                 roomTemplateInstance.name = $"{layoutRoom.Room.GetDisplayName()} - {roomTemplatePrefab.name}";
@@ -126,6 +131,8 @@ namespace Edgar.Unity
                     From = doorLine.Line.From.ToUnityIntVector3(),
                     To = doorLine.Line.To.ToUnityIntVector3(),
                     Length = doorLine.Length + 1,
+                    Direction = GetDirection(doorLine.Type),
+                    Socket = doorLine.DoorSocket as DoorSocketBase
                 };
                 var doorLineInfo = new DoorLineInfoGrid2D(
                     doorLineUnity,
@@ -152,26 +159,42 @@ namespace Edgar.Unity
         {
             var doorLine = doorInfo.DoorLine;
 
+            // TODO: keep DRY
             switch (doorLine.GetDirection())
             {
                 case OrthogonalLineGrid2D.Direction.Right:
                     return new DoorInstanceGrid2D(new OrthogonalLine(doorLine.From.ToUnityIntVector3(), doorLine.To.ToUnityIntVector3()), Vector2Int.up,
-                        connectedRoomInstance.Room, connectedRoomInstance);
+                        connectedRoomInstance.Room, connectedRoomInstance, doorInfo.Socket as DoorSocketBase, GetDirection(doorInfo.Type));
 
                 case OrthogonalLineGrid2D.Direction.Left:
                     return new DoorInstanceGrid2D(new OrthogonalLine(doorLine.To.ToUnityIntVector3(), doorLine.From.ToUnityIntVector3()), Vector2Int.down,
-                        connectedRoomInstance.Room, connectedRoomInstance);
+                        connectedRoomInstance.Room, connectedRoomInstance, doorInfo.Socket as DoorSocketBase, GetDirection(doorInfo.Type));
 
                 case OrthogonalLineGrid2D.Direction.Top:
                     return new DoorInstanceGrid2D(new OrthogonalLine(doorLine.From.ToUnityIntVector3(), doorLine.To.ToUnityIntVector3()), Vector2Int.left,
-                        connectedRoomInstance.Room, connectedRoomInstance);
+                        connectedRoomInstance.Room, connectedRoomInstance, doorInfo.Socket as DoorSocketBase, GetDirection(doorInfo.Type));
 
                 case OrthogonalLineGrid2D.Direction.Bottom:
                     return new DoorInstanceGrid2D(new OrthogonalLine(doorLine.To.ToUnityIntVector3(), doorLine.From.ToUnityIntVector3()), Vector2Int.right,
-                        connectedRoomInstance.Room, connectedRoomInstance);
+                        connectedRoomInstance.Room, connectedRoomInstance, doorInfo.Socket as DoorSocketBase, GetDirection(doorInfo.Type));
 
                 default:
                     throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private static DoorDirection GetDirection(DoorType type)
+        {
+            switch (type)
+            {
+                case DoorType.Undirected:
+                    return DoorDirection.Undirected;
+                case DoorType.Entrance:
+                    return DoorDirection.Entrance;
+                case DoorType.Exit:
+                    return DoorDirection.Exit;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }
         }
 
@@ -198,22 +221,14 @@ namespace Edgar.Unity
 
         #region codeBlock:2d_keepPrefabsInEditor
 
-        private static GameObject InstantiateRoomTemplate(GameObject roomTemplatePrefab)
+        private static GameObject InstantiateRoomTemplate(GameObject roomTemplatePrefab, RoomTemplatePrefabModeGrid2D prefabMode)
         {
-            // Set to true if you want to keep prefabs when generating levels in the editor
-            const bool keepPrefabsInEditor = false;
-
-            // Set to true if you want to unpack the root game object of the prefab
-            // (keepPrefabsInEditor must be true for this constant to change anything)
-            const bool unpackRootObject = false;
-
-            // ReSharper disable once ConditionIsAlwaysTrueOrFalse
-            if (!Application.isPlaying && keepPrefabsInEditor)
+            if (!Application.isPlaying && prefabMode != RoomTemplatePrefabModeGrid2D.Instantiate)
             {
                 #if UNITY_EDITOR
                 var roomTemplateInstance = (GameObject) PrefabUtility.InstantiatePrefab(roomTemplatePrefab);
 
-                if (unpackRootObject)
+                if (prefabMode == RoomTemplatePrefabModeGrid2D.InstantiatePrefabAndUnpackRoot)
                 {
                     #pragma warning disable CS0162 // Unreachable code detected
                     PrefabUtility.UnpackPrefabInstance(

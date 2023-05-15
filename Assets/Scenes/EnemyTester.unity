@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 882565890}
   - component: {fileID: 882565889}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Dungeon Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,6 +265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   EnableDiagnostics: 0
+  InputType: 1
+  CustomInputTask: {fileID: 11400000, guid: c66e37e5e5814e142a057d3b3c97fa29, type: 2}
   FixedLevelGraphConfig:
     LevelGraph: {fileID: 11400000, guid: fb194a78b567ed14bbc6ee8ac45f9060, type: 2}
     UseCorridors: 1
@@ -273,6 +275,7 @@ MonoBehaviour:
     Timeout: 10000
     RepeatModeOverride: 0
     MinimumRoomDistance: 3
+    RoomTemplatePrefabMode: 0
   PostProcessConfig:
     InitializeSharedTilemaps: 1
     TilemapLayersStructure: 0
@@ -286,6 +289,7 @@ MonoBehaviour:
   CustomPostProcessTasks:
   - {fileID: 11400000, guid: 3ac7d466498a8e040ab3d7dc5a999a37, type: 2}
   - {fileID: 11400000, guid: d9546eddf1f11b842a8b85f2358288ec, type: 2}
+  - {fileID: 11400000, guid: 749dd5da8363d5d49b383a56f6838db6, type: 2}
   OtherConfig:
     UseRandomSeed: 1
     RandomGeneratorSeed: 0
