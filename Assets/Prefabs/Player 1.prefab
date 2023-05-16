@@ -218,7 +218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61320a744ee088a4c8701554e58e5293, type: 3}
+  m_Sprite: {fileID: -434135446, guid: 4bcc5c50e5ab60441b52c354665a848c, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2509,7 +2509,7 @@ GameObject:
   - component: {fileID: 1980088323778404029}
   - component: {fileID: 1980088323778404030}
   - component: {fileID: 8480979807494701342}
-  - component: {fileID: 7217319573573323189}
+  - component: {fileID: 7728318731329836624}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2628,7 +2628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b317044c46c29e947bf0f023fa500114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7217319573573323189
+--- !u!114 &7728318731329836624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2647,10 +2647,10 @@ MonoBehaviour:
   TileGranularity: 2
   FogSmoothness: 20
   WaveSpeed: 10
-  WaveRevealThreshold: 0.5
+  WaveRevealThreshold: 0.1
   FadeInDuration: 1
   RevealCorridors: 1
-  RevealCorridorsTiles: 1
+  RevealCorridorsTiles: 3
   RevealCorridorsGradually: 1
   InitialFogTransparency: 0
   WaveOrigin: {fileID: 0}

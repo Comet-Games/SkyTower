@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 using UnityEngine.SceneManagement;
+using Edgar.Unity.Examples.Gungeon;
 
 public class EnemyHealth : MonoBehaviour
 {
@@ -55,7 +56,8 @@ public class EnemyHealth : MonoBehaviour
                 if (health <= 0)
                 {
                     Debug.Log("The Enemy Just Died");
-                    Die();
+                    GetComponent<GungeonEnemy>().OnKilled();
+                    //Die();
                 }
             }
             canTakeDamage = false;

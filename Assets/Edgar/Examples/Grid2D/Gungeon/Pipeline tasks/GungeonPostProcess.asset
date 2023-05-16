@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: GungeonPostProcess
   m_EditorClassIdentifier: 
   Enemies:
-  - {fileID: 6963218544976182214, guid: 088a0168fc53e4943ada00cade5a992a, type: 3}
-  - {fileID: 2179296400991150110, guid: 843d7854534a5594ea2acbf5fe253601, type: 3}
+  - {fileID: 1458253628247066661, guid: 5d759a1206c6e574184019cc24abc319, type: 3}
+  - {fileID: 1458253628247066661, guid: 5d759a1206c6e574184019cc24abc319, type: 3}
+  - {fileID: 1458253628247066661, guid: 5d759a1206c6e574184019cc24abc319, type: 3}

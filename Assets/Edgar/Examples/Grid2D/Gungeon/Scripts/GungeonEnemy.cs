@@ -11,8 +11,14 @@ namespace Edgar.Unity.Examples.Gungeon
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                RoomManager.OnEnemyKilled(this);
+                //RoomManager.OnEnemyKilled(this);
+                OnKilled();
             }
+        }
+
+        public void OnKilled()
+        {
+            RoomManager.OnEnemyKilled(this);
         }
     }
 }

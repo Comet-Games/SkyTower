@@ -109,7 +109,7 @@ namespace Edgar.Unity.Examples.Gungeon
             while (enemies.Count < totalEnemiesCount)
             {
                 // Find random position inside floor collider bounds
-                var position = RandomPointInBounds(FloorCollider.bounds, 1f);
+                var position = RandomPointInBounds(FloorCollider.bounds, 2f);
 
                 // Check if the point is actually inside the collider as there may be holes in the floor, etc.
                 if (!IsPointWithinCollider(FloorCollider, position))
@@ -129,6 +129,7 @@ namespace Edgar.Unity.Examples.Gungeon
                 // Create an instance of the enemy and set position and parent
                 var enemy = Instantiate(enemyPrefab, roomInstance.RoomTemplateInstance.transform, true);
                 enemy.transform.position = position;
+                Debug.Log("Spawned at " + position);
                 
                 // Add the GungeonEnemy component to know when the enemy is killed
                 var gungeonEnemy = enemy.AddComponent<GungeonEnemy>();
