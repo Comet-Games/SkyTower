@@ -109,7 +109,7 @@ namespace Edgar.Unity.Examples.Gungeon
             while (enemies.Count < totalEnemiesCount)
             {
                 // Find random position inside floor collider bounds
-                var position = RandomPointInBounds(FloorCollider.bounds, 2f);
+                var position = RandomPointInBounds(FloorCollider.bounds, 1f);
 
                 // Check if the point is actually inside the collider as there may be holes in the floor, etc.
                 if (!IsPointWithinCollider(FloorCollider, position))
